@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>장해린 W3 Sketch3</title>
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link rel="stylesheet" href="../../../../style/style.css" />
+    <link rel="stylesheet" href="../../../../plugin/prism/prism.css" />
+    <script src="../../../../plugin/prism/prism.js" defer></script>
+    <!-- 위는 건들지 말기!!! -->
+    <!-- 유저가 보는 부분은 body 부분이다! -->
+    <!-- head에 넣으면 읽지를 못한다! -->
+    <!-- <script>
+    let username = prompt('너의 이름은?', '홍길동');
+    document.getElementById('html - id').textContent =
+        '환영합니다.' + username + '님';
+    </script> -->
+  </head>
+  <body>
+    <!-- 외부 링크를 불러올 때는 머리에 코드를 두어야 한다!! -->
+    <!-- 외부 링크를 불러올 때 뒷자락에 defer을 붙여 가져오면 실행이 잘 된다!
+    다 읽고 난 뒤에 실행을 시키기 때문이다! -->
+    <div class="viewport">
+      <main>
+        <section>
+          <div class="container"></div>
+          <h2 id="html - id"></h2>
+        </section>
+      </main>
+      <footer>
+        <section>
+          <div class="container">
+            <h6>index.html</h6>
+            <pre
+              class="line-numbers"
+              data-src="./index.html"
+              data-download-link></pre>
+          </div>
+        </section>
+      </footer>
+    </div>
+    <script>
+      let username = prompt('너의 이름은?', '홍길동');
+      document.getElementById('html - id').textContent =
+        '환영합니다.' + username + '님';
+    </script>
+    <!-- body 끝에 코드를 두는 것이 가장 좋다 -->
+  </body>
+</html>
