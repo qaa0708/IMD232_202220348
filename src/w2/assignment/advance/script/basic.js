@@ -9,6 +9,8 @@ function setup() {
     aspectRatio
   );
   createCanvas(canvasDimensions.w, canvasDimensions.h);
+  // setCanvasContainer('p5-canvas', 3, 2, true);
+
   background('#F0F0EA');
 }
 
