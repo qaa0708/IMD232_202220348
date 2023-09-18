@@ -1,10 +1,29 @@
+let originalWidth = 1000;
+let originalHeight = 667;
+let aspectRatio = originalWidth / originalHeight;
+
 function setup() {
-  setCanvasContainer('p5-canvas', 3, 2, true);
+  let canvasDimensions = getCanvasDimensions(
+    windowWidth,
+    windowHeight,
+    aspectRatio
+  );
+  createCanvas(canvasDimensions.w, canvasDimensions.h);
   background('#F0F0EA');
 }
 
 function draw() {
   background('#F0F0EA');
+
+  let scaleFactor = min(width / originalWidth, height / originalHeight);
+  translate(
+    (width - originalWidth * scaleFactor) / 2,
+    (height - originalHeight * scaleFactor) / 2
+  );
+
+  let aspectRatio = originalWidth / originalHeight;
+
+  scale(scaleFactor);
 
   fill('#C29E6C');
   noStroke();
@@ -99,6 +118,27 @@ function draw() {
   fill('#66390F');
   rect(370, 390, 170, 70, 10, 10, 50, 50);
   rect(430, 400, 60, 300, 10, 10, 50, 50);
+}
 
-  rect();
+function windowResized() {
+  let canvasDimensions = getCanvasDimensions(
+    windowWidth,
+    windowHeight,
+    aspectRatio
+  );
+  resizeCanvas(canvasDimensions.w, canvasDimensions.h);
+}
+
+function getCanvasDimensions(w, h, ratio) {
+  if (w / h > ratio) {
+    return {
+      w: h * ratio,
+      h: h,
+    };
+  } else {
+    return {
+      w: w,
+      h: w / ratio,
+    };
+  }
 }
